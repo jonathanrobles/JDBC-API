@@ -46,7 +46,7 @@ public class Main {
 	 */
 	public Main() {
 		initialize();
-		load.loadData(table);
+		//load.loadData(table);
 		
 		JLabel lblItemList = new JLabel("Item List");
 		lblItemList.setBounds(761, 54, 137, 49);
@@ -55,11 +55,11 @@ public class Main {
 	}
 	
 	Database database = new Database();//Database Connection
-	Add_Item add = new Add_Item(database.con);//Add an Item Class/Object
-	Update_Item update = new Update_Item(database.con);//Update an Item Class/Object
-	Delete_Item delete = new Delete_Item(database.con); //Delete an Item Class/Object
-	Load_Data load = new Load_Data(database.con);//Load Items Class/Object
-	Item_Search search = new Item_Search(database.con);//Search an Item by id Class/Object
+	AddItem add = new AddItem(database.con);//Add an Item Class/Object
+	UpdateItem update = new UpdateItem(database.con);//Update an Item Class/Object
+	DeleteItem delete = new DeleteItem(database.con); //Delete an Item Class/Object
+	//Load_Data load = new Load_Data(database.con);//Load Items Class/Object
+	//Item_Search search = new Item_Search(database.con);//Search an Item by id Class/Object
 
 	/**
 	 * Initialize the contents of the frame.
@@ -123,7 +123,7 @@ public class Main {
                 txtCode.setText("");
                 txtPrice.setText("");
                 txtItemName.requestFocus();
-                load.loadData(table);
+                //load.loadData(table);
                 
 			}
 		});
@@ -165,7 +165,7 @@ public class Main {
 			@Override
 			public void keyReleased(KeyEvent e) {
 				String id = txtSearch.getText();
-				search.searchItem(id, txtItemName, txtCode, txtPrice);
+				//search.searchItem(id, txtItemName, txtCode, txtPrice);
 			}
 		});
 		txtSearch.setBounds(128, 27, 247, 20);
@@ -203,7 +203,7 @@ public class Main {
                 String id = txtSearch.getText();
                 
 				update.updateItem(itemName, itemCode, itemPrice, id);
-				load.loadData(table);
+				//load.loadData(table);
 			}
 		});
 		btnUpdate.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -221,7 +221,7 @@ public class Main {
                 txtItemName.setText("");
                 txtCode.setText("");
                 txtPrice.setText("");
-				load.loadData(table);
+				//load.loadData(table);
 			}
 		});
 		btnNewButton_2_1.setBackground(new Color(192, 192, 192));
